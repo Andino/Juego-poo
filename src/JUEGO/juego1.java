@@ -271,13 +271,12 @@ public class dibujar extends JPanel implements ActionListener {
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
         Graphics2D agu = (Graphics2D) grafica;
-        agu.drawImage(persona1.mostrararbusto(),730,435,180,45,this);
-        agu.drawImage(persona1.mostrararbusto(),875,435,180,45,this);   
+        agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
+        agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
         if(persona1.getX() >= 995){
             juegoo = new juego1_1();
-            
             dispose();
-            juegoo.setPunto(persona1.getY());
+            
         }
            
         

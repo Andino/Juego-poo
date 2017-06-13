@@ -55,7 +55,7 @@ public class juego1_1 extends JFrame{
     public persona(){
         a = 0;
         x = 0;
-        
+        y = 100;
         ImageIcon imag = new ImageIcon(this.getClass().getResource(persona));
         imagen = imag.getImage();
         ImageIcon jar = new ImageIcon(this.getClass().getResource(jardin));
@@ -263,7 +263,8 @@ public class dibujar extends JPanel implements ActionListener {
     
     public void paint(Graphics grafica){
         int suma =0;
-        int suma2 = 575;
+        int suma2 = 788;
+        juego2 juegoo;
         super.paint(grafica);
         Graphics2D gra1 = (Graphics2D) grafica;
         gra1.drawImage(persona1.mostrarimagen(),0,0,getWidth(),getHeight(),this);
@@ -275,16 +276,27 @@ public class dibujar extends JPanel implements ActionListener {
             suma=suma+75;
             
         }  
+        while(suma2 < 1050){
+            gra.drawImage(persona1.mostraragua(),suma2,90,25,25,this);
+            suma2= suma2+25;
+        }
+       
         
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
         Graphics2D agu = (Graphics2D) grafica;
-        agu.drawImage(persona1.mostrararbusto(),730,435,180,45,this);
-        agu.drawImage(persona1.mostrararbusto(),875,435,180,45,this);   
-           
-           
+        agu.drawImage(persona1.mostrararbusto(),0,445,180,35,this);
+        agu.drawImage(persona1.mostrararbusto(),150,445,180,35,this);
+        agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
+        agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
+        agu.drawImage(persona1.mostrararbusto(),803,68,155,25,this);   
+        agu.drawImage(persona1.mostrararbusto(),930,68,155,25,this);  
         
-        
+        if(persona1.getX() >= 995){
+            juegoo = new juego2();
+            dispose();
+            
+        }
         System.out.println("x: "+persona1.getX());
         System.out.println("y: "+persona1.getY());
         
