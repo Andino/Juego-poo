@@ -1,5 +1,6 @@
 
 package JUEGO;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,13 +13,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-public class juego1_1 extends JFrame{
+public class juego1_3 extends JFrame{
+    juego2 juegoo;
     private static final String Nombre = "Corre que te alcanzan";
     persona persona2 = new persona();
     int punto;
     juego2 juego;
     private int alto = 100;
-    public juego1_1(){
+    public juego1_3(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(new dibujar());
         setTitle(Nombre);
@@ -38,10 +40,10 @@ public class juego1_1 extends JFrame{
     
     public class persona {
     private String persona = "/imagenes/persona1.png";
-    private String jardin = "/imagenes/jardin11.png";
+    private String jardin = "/imagenes/jardin13.png";
     private String aguaa = "/imagenes/agua.gif";
     private String arbusto = "/imagenes/arbusto2.png";
-  
+    private String utileria = "/imagenes/utileria.png";
     private int dx = 0;
     private int dy = 0;
     private int x;
@@ -50,7 +52,7 @@ public class juego1_1 extends JFrame{
     private Image imagen2;
     private Image imagen3;
     private Image imagen4;
-   
+    private Image imagen5;
     private int a;
     public persona(){
         a = 0;
@@ -64,7 +66,8 @@ public class juego1_1 extends JFrame{
         imagen3 = agua.getImage();
         ImageIcon arbustoo = new ImageIcon(this.getClass().getResource(arbusto));
         imagen4 = arbustoo.getImage();
-        
+        ImageIcon uti = new ImageIcon(this.getClass().getResource(utileria));
+        imagen5 = uti.getImage();
         
     }
     
@@ -81,6 +84,9 @@ public class juego1_1 extends JFrame{
     }
     public Image mostrararbusto(){
         return imagen4;
+    }
+    public Image mostrarutileria(){
+        return imagen5;
     }
     
     public void moverY(){
@@ -121,7 +127,7 @@ public class juego1_1 extends JFrame{
         int key = e.getKeyCode();
        
         if(key == KeyEvent.VK_UP){
-            if(value > 90){
+            if(value > 100 ){
                
                 dy= -10;
                 a++;
@@ -141,6 +147,19 @@ public class juego1_1 extends JFrame{
                     repaint();
                 } else {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
+                }
+            }
+            if(value2 > 790 && value2 < 885 && value < 175){
+                dy=0; 
+                if(value > 175){
+                 dy=-10;
+                } 
+            }
+            if(value2 > 870 && value2 < 950 && value < 101){
+                dy=-10; 
+                if(getY() <= 61){
+                    juegoo = new juego2();
+                    dispose();
                 }
             }
         }
@@ -188,11 +207,17 @@ public class juego1_1 extends JFrame{
                     setImage("/imagenes/persona_izquierda_" + (a % 2) + ".png");
                 }
             }
+            if(value2 > 795 && value2 < 900 && value < 165){
+                dx=0;
+                if(value2 > 890){
+                    dx=10;
+                }
+            }
             
         }
         if(key == KeyEvent.VK_RIGHT){
             
-            if(value2 < 1010){
+            if(value2 < 925){
                 dx= 10;
                 a++;
                 if (a % 2 == 0) {
@@ -213,7 +238,16 @@ public class juego1_1 extends JFrame{
                     setImage("/imagenes/persona_derecha_" + (a % 2) + ".png");
                 }
             }
+            if(value2 > 780 && value2 < 870 && value < 165){
+                dx=0; 
+                if(value2 < 780){
+                 dx=-10;
+                }
+                
+            }
+            
         }
+        
         moverX();
         moverY();
     
@@ -263,8 +297,8 @@ public class dibujar extends JPanel implements ActionListener {
     
     public void paint(Graphics grafica){
         int suma =0;
-        int suma2 = 788;
-        juego1_2 juegoo;
+        int suma2 = 91;
+        
         super.paint(grafica);
         Graphics2D gra1 = (Graphics2D) grafica;
         gra1.drawImage(persona1.mostrarimagen(),0,0,getWidth(),getHeight(),this);
@@ -276,27 +310,26 @@ public class dibujar extends JPanel implements ActionListener {
             suma=suma+75;
             
         }  
-        while(suma2 < 1050){
-            gra.drawImage(persona1.mostraragua(),suma2,90,25,25,this);
+        while(suma2 < 465){
+            gra.drawImage(persona1.mostraragua(),958,suma2,65,50,this);
             suma2= suma2+25;
         }
+        gra.drawImage(persona1.mostraragua(),820,91,100,100,this);
+        gra.drawImage(persona1.mostraragua(),920,91,100,100,this);
        
+        Graphics2D grauti = (Graphics2D) grafica;    
+        grauti.drawImage(persona1.mostrarutileria(),900,91,60,25,this); 
+        grauti.drawImage(persona1.mostrarutileria(),900,112,60,25,this); 
+        grauti.drawImage(persona1.mostrarutileria(),900,133,60,25,this); 
+        grauti.drawImage(persona1.mostrarutileria(),900,154,60,25,this);
+        grauti.drawImage(persona1.mostrarutileria(),900,175,60,25,this); 
         
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
         Graphics2D agu = (Graphics2D) grafica;
         agu.drawImage(persona1.mostrararbusto(),0,445,180,35,this);
         agu.drawImage(persona1.mostrararbusto(),150,445,180,35,this);
-        agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
-        agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
-        agu.drawImage(persona1.mostrararbusto(),803,68,155,25,this);   
-        agu.drawImage(persona1.mostrararbusto(),930,68,155,25,this);  
-        
-        if(persona1.getX() >= 1010){
-            juegoo = new juego1_2();
-            dispose();
-            
-        }
+       
         System.out.println("x: "+persona1.getX());
         System.out.println("y: "+persona1.getY());
         

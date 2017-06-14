@@ -12,13 +12,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-public class juego1_1 extends JFrame{
+public class juego1_2 extends JFrame{
     private static final String Nombre = "Corre que te alcanzan";
     persona persona2 = new persona();
     int punto;
     juego2 juego;
     private int alto = 100;
-    public juego1_1(){
+    public juego1_2(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(new dibujar());
         setTitle(Nombre);
@@ -38,7 +38,7 @@ public class juego1_1 extends JFrame{
     
     public class persona {
     private String persona = "/imagenes/persona1.png";
-    private String jardin = "/imagenes/jardin11.png";
+    private String jardin = "/imagenes/jardin12.png";
     private String aguaa = "/imagenes/agua.gif";
     private String arbusto = "/imagenes/arbusto2.png";
   
@@ -192,7 +192,7 @@ public class juego1_1 extends JFrame{
         }
         if(key == KeyEvent.VK_RIGHT){
             
-            if(value2 < 1010){
+            if(value2 < 995){
                 dx= 10;
                 a++;
                 if (a % 2 == 0) {
@@ -263,8 +263,8 @@ public class dibujar extends JPanel implements ActionListener {
     
     public void paint(Graphics grafica){
         int suma =0;
-        int suma2 = 788;
-        juego1_2 juegoo;
+        int suma2 = 0;
+        juego1_3 juegoo;
         super.paint(grafica);
         Graphics2D gra1 = (Graphics2D) grafica;
         gra1.drawImage(persona1.mostrarimagen(),0,0,getWidth(),getHeight(),this);
@@ -276,7 +276,7 @@ public class dibujar extends JPanel implements ActionListener {
             suma=suma+75;
             
         }  
-        while(suma2 < 1050){
+        while(suma2 < 300){
             gra.drawImage(persona1.mostraragua(),suma2,90,25,25,this);
             suma2= suma2+25;
         }
@@ -287,15 +287,13 @@ public class dibujar extends JPanel implements ActionListener {
         Graphics2D agu = (Graphics2D) grafica;
         agu.drawImage(persona1.mostrararbusto(),0,445,180,35,this);
         agu.drawImage(persona1.mostrararbusto(),150,445,180,35,this);
-        agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
-        agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
-        agu.drawImage(persona1.mostrararbusto(),803,68,155,25,this);   
-        agu.drawImage(persona1.mostrararbusto(),930,68,155,25,this);  
+           
+        agu.drawImage(persona1.mostrararbusto(),-5,68,155,25,this);   
+        agu.drawImage(persona1.mostrararbusto(),127,68,155,25,this);  
         
-        if(persona1.getX() >= 1010){
-            juegoo = new juego1_2();
+        if(persona1.getX() >= 995){
+            juegoo = new juego1_3();
             dispose();
-            
         }
         System.out.println("x: "+persona1.getX());
         System.out.println("y: "+persona1.getY());
