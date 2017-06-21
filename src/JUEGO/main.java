@@ -16,6 +16,10 @@ public class main {
             //juego3_1 juego = new juego3_1();
             //juego3_2 juego = new juego3_2();
             //juego3_3 juego = new juego3_3();
-            juego3_4 juego = new juego3_4();
+            //juego3_4 juego = new juego3_4();
+           frm_principal principal = new frm_principal();
+           principal.setLocationRelativeTo(null);
+           principal.setVisible(true);
+           
     }
 }
