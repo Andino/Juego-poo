@@ -395,7 +395,10 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_registrosActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        // TODO add your handling code here:
+        NIVEL1.frm_nivel1 Nivel1 = new NIVEL1.frm_nivel1();
+        Nivel1.setLocationRelativeTo(null);
+        Nivel1.show();
+        this.dispose();
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
