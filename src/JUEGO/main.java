@@ -6,7 +6,7 @@ public class main {
     
      public static void main(String[] args) {
 
-            //new menu().setVisible(true);
+            new menu().setVisible(true);
             //juego1 juego = new juego1(); 
             //juego1_1 juego = new juego1_1(); 
             //juego1_2 juego = new juego1_2(); 
@@ -16,6 +16,6 @@ public class main {
             //juego3_1 juego = new juego3_1();
             //juego3_2 juego = new juego3_2();
             //juego3_3 juego = new juego3_3();
-            juego3_4 juego = new juego3_4();
+            //juego3_4 juego = new juego3_4();
     }
 }
