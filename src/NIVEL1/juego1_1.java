@@ -30,12 +30,28 @@ public class juego1_1 extends JFrame{
     
     
     }
+    
+    Thread hilo = new Thread() {//declaramos el hilo
+
+        @Override
+        public void run() {
+            try 
+            {
+                hilo.sleep(10);//que duerma una decima de segundo
+            } 
+            catch (java.lang.InterruptedException ie) 
+            {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
 
  
     
     
     public class persona {
     private String persona = "/imagenes/persona1.png";
+    private String enemigoo = "/imagenes/persona1.png";
     private String jardin = "/imagenes/jardin11.png";
     private String aguaa = "/imagenes/agua.gif";
     private String arbusto = "/imagenes/arbusto2.png";
@@ -48,6 +64,7 @@ public class juego1_1 extends JFrame{
     private Image imagen2;
     private Image imagen3;
     private Image imagen4;
+    private Image enemi;
    
     private int a;
     public persona(){
@@ -62,6 +79,9 @@ public class juego1_1 extends JFrame{
         imagen3 = agua.getImage();
         ImageIcon arbustoo = new ImageIcon(this.getClass().getResource(arbusto));
         imagen4 = arbustoo.getImage();
+        
+        ImageIcon enemigo = new ImageIcon(this.getClass().getResource(enemigoo));
+        enemi = enemigo.getImage();
         
         
     }
@@ -79,6 +99,10 @@ public class juego1_1 extends JFrame{
     }
     public Image mostrararbusto(){
         return imagen4;
+    }
+    
+    public Image enemigo(){
+        return enemi;
     }
     
     public void moverY(){
@@ -270,6 +294,8 @@ public class dibujar extends JPanel implements ActionListener {
         Graphics2D gra1 = (Graphics2D) grafica;
         gra1.drawImage(persona1.mostrarimagen(),0,0,getWidth(),getHeight(),this);
         
+        gra1.drawImage(persona1.enemigo(),0,0,getWidth(),getHeight(),this);
+        
         Graphics2D gra = (Graphics2D) grafica;
         
         while(suma < 1050){
@@ -280,11 +306,10 @@ public class dibujar extends JPanel implements ActionListener {
         while(suma2 < 1050){
             gra.drawImage(persona1.mostraragua(),suma2,90,25,25,this);
             suma2= suma2+25;
-        }
-       
-        
+        } 
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
+        
         Graphics2D agu = (Graphics2D) grafica;
         agu.drawImage(persona1.mostrararbusto(),0,445,180,35,this);
         agu.drawImage(persona1.mostrararbusto(),150,445,180,35,this);
