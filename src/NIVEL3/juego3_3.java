@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 public class juego3_3 extends JFrame{
-     //juego3_1 juegoo;
+     juego3_4 juegoo;
     private static final String Nombre = "Corre que te alcanzan";
 
    
@@ -436,6 +436,10 @@ public class juego3_3 extends JFrame{
                 if(value2 < 390){
                  dx=-10;
                 }  
+            }
+            if(value2 > 990){
+                juegoo = new juego3_4();
+                dispose();                
             }
         }
         if(key == KeyEvent.VK_ESCAPE){

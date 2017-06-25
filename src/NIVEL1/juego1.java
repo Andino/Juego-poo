@@ -17,15 +17,11 @@ import javax.swing.Timer;
 
 public class juego1 extends JFrame {
    
-    
-    private static final String Nombre = "Corre que te alcanzan";
-
     private int alto = 100;
     public juego1(){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         add(new dibujar());
-        setTitle(Nombre);
         setSize(1030, 570);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -66,96 +62,92 @@ public class juego1 extends JFrame {
         
         
     }
-    public Image mostrarimagen(){
-        return imagen2;
-    }
+    public Image mostrarimagen(){ return imagen2; }
     
-    public Image mostraragua(){
-        return imagen3;
-    }
-    public Image mostrararbusto(){
-        return imagen4;
-    }
+    public Image mostraragua(){ return imagen3; }
+   
+    public Image mostrararbusto(){ return imagen4; }
     
-        public void moverY(){
-        y += dy;
-    }
-    public void moverX(){
-        x += dx;
-    }
+    public void moverY(){ y += dy; }
     
-    
-    public int getX() {
-        return x;
-    }
+    public void moverX(){ x += dx; }
 
-    public int getY() {
-        return y;
-    }
+    public int getX() { return x; }
 
-        public void setDx(int dx) {
-            this.dx = dx;
-        }
+    public int getY() { return y; }
 
-        public void setDy(int dy) {
-            this.dy = dy;
-        }
+    public void setDx(int dx) { this.dx = dx; }
+
+    public void setDy(int dy) { this.dy = dy; }
+ 
+    public Image getImagen() { return imagen; }
     
-
-    public Image getImagen() {
-        return imagen;
-    }
-    
-    public void setImage(String imagen) {
+    public void setImage(String imagen) 
+    {
         ImageIcon imag = new ImageIcon(this.getClass().getResource(imagen));
         this.imagen = imag.getImage();
     } 
     
-    public void keyPressed(KeyEvent e, int value,int value2){
+    public void keyPressed(KeyEvent e, int value,int value2)
+    {
         int key = e.getKeyCode();
        
-        if(key == KeyEvent.VK_UP){
-            if(value > 90){
-               
+        if(key == KeyEvent.VK_UP)
+        {
+            if(value > 90)
+            {               
                 dy= -10;
                 a++;
-                if (a % 2 == 0) {
+                if (a % 2 == 0) 
+                {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
                     repaint();
-                } else {
+                } 
+                else 
+                {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
                 }
             }
-            else {
-                
+            else 
+            {                
                 dy= 0;
                 a++;
-                if (a % 2 == 0) {
+                if (a % 2 == 0) 
+                {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
                     repaint();
-                } else {
+                } 
+                else 
+                {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
                 }
             }
         }
-        if(key == KeyEvent.VK_DOWN){
-            if(value <= 435){
+        if(key == KeyEvent.VK_DOWN)
+        {
+            if(value <= 435)
+            {
                 dy= 10;
                 a++;
-                if (a % 2 == 0) {
+                if (a % 2 == 0) 
+                {
                     setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
                 } 
-                else {
+                else 
+                {
                     setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
                 }
             }
-            else{
+            else
+            {
                 dy= 0;
                 a++;
-                if (a % 2 == 0) {
+                if (a % 2 == 0) 
+                {
                     setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
                 } 
-                else {
+                else 
+                {
                     setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
                 }
             }
@@ -247,8 +239,8 @@ public class dibujar extends JPanel implements ActionListener {
     private persona persona1;
     private Timer timer;
 
-    public dibujar(){
-       
+    public dibujar()
+    {       
         setBackground(Color.white);
         setFocusable(true);
         addKeyListener(new teclado());
@@ -258,7 +250,8 @@ public class dibujar extends JPanel implements ActionListener {
         timer.start();
     }
     
-    public void paint(Graphics grafica){
+    public void paint(Graphics grafica)
+    {
         juego1_1  juegoo;
         int suma =0;
         int suma2 = 575;
@@ -268,17 +261,19 @@ public class dibujar extends JPanel implements ActionListener {
         
         Graphics2D gra = (Graphics2D) grafica;
         
-        while(suma < 1050){
+        while(suma < 1050)
+        {
             gra.drawImage(persona1.mostraragua(),suma,475,75,100,this);
-            suma=suma+75;
-            
-        }  
+            suma=suma+75;            
+        }
+        
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
         Graphics2D agu = (Graphics2D) grafica;
         agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
         agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
-        if(persona1.getX() >= 995){
+        if(persona1.getX() >= 995)
+        {
             juegoo = new juego1_1();
             dispose();
             
