@@ -72,8 +72,9 @@ public class frm_nivel1 extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         NIVEL1.juego1 nivel1 = new NIVEL1.juego1();
         jp_juego.add(nivel1);
-        setVisible(true);
+        setVisible(false);
         this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
 
     /**

@@ -34,22 +34,36 @@ public class juego1 extends JFrame {
     private persona persona1;
     private persona enemigo;
     private materiales materiales;
+    int pos1;
+    int pos2;
     
     Thread hilo = new Thread() {
-        int pos1;
-        int pos2;
+        
         @Override
         public void run() {
             try {
-                hilo.sleep(5000);
+                hilo.sleep(3000);
                 while (true) {        
-                       enemigo.movAuto("abajo", enemigo.getY(), enemigo.getX()); 
-                       enemigo.movAuto("derecha ", enemigo.getY(), enemigo.getX()); 
-                    hilo.sleep(80);
-                    if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
-                    {
-                        JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                    for(int i = 0; i < 35; i ++){
+                        enemigo.movAuto("abajo", enemigo.getY(), enemigo.getX()); 
+                        hilo.sleep(80);
+                        if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
+                        {
+                            JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                        }
                     }
+                    
+                    for(int j = 0; j < 35; j ++){
+                        enemigo.movAuto("arriba", enemigo.getY(), enemigo.getX()); 
+                        hilo.sleep(80);
+                        if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
+                        {
+                            JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                        }
+                    }
+                    
+                    
+                    hilo.sleep(80);
                 }
             } catch (java.lang.InterruptedException ie) {
                 System.out.println(ie.getMessage());
@@ -69,7 +83,7 @@ public class juego1 extends JFrame {
             addKeyListener(new teclado());
 
             persona1 = new persona("");
-            enemigo = new persona("", 500, 130);
+            enemigo = new persona("", 500, 95);
             materiales = new materiales();
             timer = new Timer(20, this);
             timer.start();
