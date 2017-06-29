@@ -1,4 +1,3 @@
-
 package NIVEL1;
 
 import Objetos.*;
@@ -29,10 +28,20 @@ public class juego1 extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         hilo.start();
+        hilo_segundario.start(); 
+        tercero.start();
+        cuarto.start();
+        quinto.start();
+        sexto.start();
     }
     
     private persona persona1;
     private persona enemigo;
+    private persona enemigo1;
+    private persona enemigo2;
+    private persona enemigo3;
+    private persona enemigo4;
+    private persona enemigo5;
     private materiales materiales;
     int pos1;
     int pos2;
@@ -42,28 +51,191 @@ public class juego1 extends JFrame {
         @Override
         public void run() {
             try {
-                hilo.sleep(3000);
+                hilo.sleep(1000);
                 while (true) {        
-                    for(int i = 0; i < 35; i ++){
-                        enemigo.movAuto("abajo", enemigo.getY(), enemigo.getX()); 
-                        hilo.sleep(80);
-                        if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
-                        {
-                            JOptionPane.showMessageDialog(rootPane, "Pierdes");
-                        }
-                    }
-                    
-                    for(int j = 0; j < 35; j ++){
-                        enemigo.movAuto("arriba", enemigo.getY(), enemigo.getX()); 
-                        hilo.sleep(80);
-                        if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
-                        {
-                            JOptionPane.showMessageDialog(rootPane, "Pierdes");
-                        }
-                    }
-                    
-                    
-                    hilo.sleep(80);
+                     for(int i = 0; i < 35; i ++){
+                         enemigo.movAuto("abajo", enemigo.getY(), enemigo.getX()); 
+                         hilo.sleep(40);
+                         if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         enemigo.movAuto("arriba", enemigo.getY(), enemigo.getX()); 
+                         hilo.sleep(40);
+                         if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                      }
+                     hilo.sleep(20);
+                }
+            } catch (java.lang.InterruptedException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
+    
+    Thread hilo_segundario = new Thread() {
+        
+        @Override
+        public void run() {
+            try {
+                hilo.sleep(1000);
+                while (true) {        
+                     for(int i = 0; i < 35; i ++){
+                         enemigo1.movAuto("abajo", enemigo1.getY(), enemigo1.getX()); 
+                         hilo.sleep(20);
+                         if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         enemigo1.movAuto("arriba", enemigo1.getY(), enemigo1.getX()); 
+                         hilo.sleep(20);
+                         if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                      }
+                     hilo.sleep(20);
+                }
+            } catch (java.lang.InterruptedException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
+    
+    Thread tercero = new Thread() {
+        @Override
+        public void run() {
+            try {
+                hilo.sleep(1000);
+                while (true) {        
+                     for(int i = 0; i < 35; i ++){
+                         enemigo2.movAuto("abajo", enemigo2.getY(), enemigo2.getX()); 
+                         hilo.sleep(10);
+                         if(enemigo2.getX() == persona1.getX() && enemigo2.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         enemigo2.movAuto("arriba", enemigo2.getY(), enemigo2.getX()); 
+                         hilo.sleep(10);
+                         if(enemigo2.getX() == persona1.getX() && enemigo2.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                      }
+                     hilo.sleep(20);
+                }
+            } catch (java.lang.InterruptedException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
+    
+    Thread cuarto = new Thread() {
+        
+        @Override
+        public void run() {
+            try {
+                hilo.sleep(1000);
+                while (true) {        
+                     for(int i = 0; i < 35; i ++){
+                         enemigo4.movAuto("abajo", enemigo4.getY(), enemigo4.getX()); 
+                         hilo.sleep(40);
+                         if(enemigo4.getX() == persona1.getX() && enemigo4.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         enemigo4.movAuto("arriba", enemigo4.getY(), enemigo4.getX()); 
+                         hilo.sleep(40);
+                         if(enemigo4.getX() == persona1.getX() && enemigo4.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                      }
+                }
+            } catch (java.lang.InterruptedException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
+    
+    Thread quinto = new Thread() {
+        
+        @Override
+        public void run() {
+            try {
+                hilo.sleep(1000);
+                while (true) {        
+                     for(int i = 0; i < 35; i ++){
+                         enemigo5.movAuto("abajo", enemigo5.getY(), enemigo5.getX()); 
+                         hilo.sleep(10);
+                         if(enemigo5.getX() == persona1.getX() && enemigo5.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         enemigo5.movAuto("arriba", enemigo2.getY(), enemigo2.getX()); 
+                         hilo.sleep(10);
+                         if(enemigo5.getX() == persona1.getX() && enemigo5.getY() == persona1.getY())
+                         {
+                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                         }
+                      }
+                     hilo.sleep(20);
+                }
+            } catch (java.lang.InterruptedException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
+    };
+    
+    Thread sexto = new Thread() {
+        @Override
+        public void run() {
+            try {
+                hilo.sleep(1000);
+                while (true) {        
+                     for(int i = 0; i < 35; i ++){
+                         hilo.sleep(50);
+                         enemigo3.movAuto("abajo", enemigo3.getY(), enemigo3.getX());
+                         if(enemigo3.getX() == persona1.getX() && persona1.getY() == enemigo3.getY())
+                         {
+                             System.out.println("Sip");
+                         }
+                         else
+                         {
+                             
+                         }
+                     }
+                     
+                     for(int j = 0; j < 35; j ++){
+                         hilo.sleep(50);
+                         enemigo3.movAuto("arriba", enemigo3.getY(), enemigo3.getX()); 
+                         if(enemigo3.getX() == persona1.getX() && enemigo3.getY() == persona1.getY())
+                         {
+                             System.out.println("Sip");
+                         }
+                         else
+                         {
+                             
+                         }
+                      }
+                     hilo.sleep(20);
                 }
             } catch (java.lang.InterruptedException ie) {
                 System.out.println(ie.getMessage());
@@ -83,7 +255,13 @@ public class juego1 extends JFrame {
             addKeyListener(new teclado());
 
             persona1 = new persona("");
+            enemigo3 = new persona("", 50, 95);
+            enemigo4 = new persona("", 100, 95);
+            enemigo5 = new persona("", 250, 95);
             enemigo = new persona("", 500, 95);
+            enemigo1 = new persona("", 700, 95);
+            enemigo2 = new persona("", 900, 150);
+            
             materiales = new materiales();
             timer = new Timer(20, this);
             timer.start();
@@ -112,6 +290,13 @@ public class juego1 extends JFrame {
             gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
             
             gra2.drawImage(enemigo.getImagen(),enemigo.getX(),enemigo.getY(),null); 
+            gra2.drawImage(enemigo1.getImagen(),enemigo1.getX(),enemigo1.getY(),null); 
+            gra2.drawImage(enemigo2.getImagen(),enemigo2.getX(),enemigo2.getY(),null); 
+            gra2.drawImage(enemigo3.getImagen(),enemigo3.getX(),enemigo3.getY(),null); 
+            gra2.drawImage(enemigo4.getImagen(),enemigo4.getX(),enemigo4.getY(),null); 
+            gra2.drawImage(enemigo5.getImagen(),enemigo5.getX(),enemigo5.getY(),null); 
+            
+            
             Graphics2D agu = (Graphics2D) grafica;
             agu.drawImage(materiales.mostrararbusto(),730,445,180,35,this);
             agu.drawImage(materiales.mostrararbusto(),875,445,180,35,this);   

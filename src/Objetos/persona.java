@@ -195,7 +195,6 @@ public class persona {
          }
         moverX();
         moverY();
-    
     }
 
     public void keyReleased(KeyEvent e){
@@ -234,7 +233,6 @@ public class persona {
                 if (a % 2 == 0)
                 {
                     setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
-                    //repaint();
                 }
                 else
                 {
