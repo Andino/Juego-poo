@@ -5,6 +5,7 @@
  */
 package Objetos;
 
+import java.applet.AudioClip;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
@@ -26,6 +27,8 @@ public class persona {
     private int x;
     private int y;
     private Image imagen;
+    private double velX = 0;
+    private double velY = 0;
     
    
     private int a;
@@ -58,11 +61,10 @@ public class persona {
         }
     }
     
-    
     public void moverY(){ y += dy; }
     
     public void moverX(){ x += dx; }
-
+    
     public int getX() { return x; }
 
     public int getY() { return y; }
@@ -86,21 +88,26 @@ public class persona {
         if(key == KeyEvent.VK_UP)
         {
             if(value > 90)
-            {               
+            {
                 dy= -5;
                 a++;
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
-                    //repaint();
+                    AudioClip Sonido;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/footprint_grass.wav"));
+                    Sonido.play();
                 } 
                 else if(a % 4 == 2)
                 {
                     setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
+                    
                 }
                 else if(a % 4 == 3)
                 {
                     setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
+                    
+                    
                 }
                 else if(a % 4 == 0)
                 {
@@ -115,7 +122,9 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
-                    //repaint();
+                    AudioClip Sonido;
+                    Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/footprint_grass.wav"));
+                    Sonido.play();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -124,6 +133,7 @@ public class persona {
                 else if(a % 4 == 3)
                 {
                     setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
+                    Thread foot = new clases.Persona_pasoGrama("foot");
                 }
                 else if(a % 4 == 0)
                 {
@@ -141,7 +151,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -150,6 +159,7 @@ public class persona {
                 else if(a % 4 == 3)
                 {
                     setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                    Thread foot = new clases.Persona_pasoGrama("foot");
                 }
                 else if(a % 4 == 0)
                 {
@@ -164,7 +174,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -189,7 +198,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -211,7 +219,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -237,7 +244,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -246,6 +252,7 @@ public class persona {
                 else if(a % 4 == 3)
                 {
                     setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+
                 }
                 else if(a % 4 == 0)
                 {
@@ -260,7 +267,6 @@ public class persona {
                 if (a % 4 == 1) 
                 {
                     setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
-                    //repaint();
                 } 
                 else if(a % 4 == 2)
                 {
@@ -269,6 +275,7 @@ public class persona {
                 else if(a % 4 == 3)
                 {
                     setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                    
                 }
                 else if(a % 4 == 0)
                 {
@@ -278,7 +285,8 @@ public class persona {
             }
         }
         
-         if(key == KeyEvent.VK_ESCAPE){
+         if(key == KeyEvent.VK_P)
+         {
              System.exit(0);
          }
         moverX();

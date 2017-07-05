@@ -16,6 +16,9 @@ public class frm_nivel1 extends javax.swing.JFrame {
      */
     public frm_nivel1() {
         initComponents();
+        Thread Fondo = new clases.Nivel1_Fondo("Musica");
+        Fondo.setPriority(10);
+        Fondo.start();
     }
 
     /**
@@ -27,8 +30,6 @@ public class frm_nivel1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jp_juego = new javax.swing.JPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -36,45 +37,24 @@ public class frm_nivel1 extends javax.swing.JFrame {
             }
         });
 
-        jp_juego.setPreferredSize(new java.awt.Dimension(1030, 570));
-
-        javax.swing.GroupLayout jp_juegoLayout = new javax.swing.GroupLayout(jp_juego);
-        jp_juego.setLayout(jp_juegoLayout);
-        jp_juegoLayout.setHorizontalGroup(
-            jp_juegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
-        );
-        jp_juegoLayout.setVerticalGroup(
-            jp_juegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jp_juego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+            .addGap(0, 5, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jp_juego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+            .addGap(0, 5, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        NIVEL1.juego1 nivel1 = new NIVEL1.juego1();
-        jp_juego.add(nivel1);
-        setVisible(false);
-        this.dispose();
-        this.setVisible(false);
+        Thread Fondo = new clases.Nivel1_Fondo("Musica");
+        Fondo.setPriority(10);
+        Fondo.start();
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -107,6 +87,5 @@ public class frm_nivel1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jp_juego;
     // End of variables declaration//GEN-END:variables
 }

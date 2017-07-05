@@ -2,6 +2,7 @@ package JUEGO;
 import java.applet.AudioClip;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -508,11 +509,10 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_registrosActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        NIVEL1.frm_nivel1 Nivel1 = new NIVEL1.frm_nivel1();
-        Nivel1.setLocationRelativeTo(null);
-        Nivel1.setVisible(true);
+        NIVEL1.frm_nivel1 n1 = new NIVEL1.frm_nivel1();
+        n1.setVisible(false);
+        NIVEL1.juego1 juego = new NIVEL1.juego1(); 
         this.dispose();
-        //NIVEL1.juego1 juego = new NIVEL1.juego1();
         
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
