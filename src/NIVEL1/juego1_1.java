@@ -62,7 +62,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(25);
                          if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                      }
                      
@@ -72,7 +72,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(25);
                          if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                       }
                      hilo.sleep(20);//Velocidad de la iteracion
@@ -96,7 +96,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(15);
                          if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                      }
                      
@@ -106,7 +106,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(15);
                          if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                       }
                      hilo.sleep(20);
@@ -128,7 +128,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(61);
                          if(enemigo2.getX() == persona1.getX() && enemigo2.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                      }
                      
@@ -137,7 +137,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(61);
                          if(enemigo2.getX() == persona1.getX() && enemigo2.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                       }
                      hilo.sleep(20);
@@ -160,7 +160,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(20);
                          if(enemigo4.getX() == persona1.getX() && enemigo4.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                      }
                      
@@ -169,7 +169,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(20);
                          if(enemigo4.getX() == persona1.getX() && enemigo4.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                       }
                 }
@@ -191,7 +191,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(80);
                          if(enemigo5.getX() == persona1.getX() && enemigo5.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                      }
                      
@@ -200,7 +200,7 @@ public class juego1_1 extends JFrame{
                          hilo.sleep(80);
                          if(enemigo5.getX() == persona1.getX() && enemigo5.getY() == persona1.getY())
                          {
-                             JOptionPane.showMessageDialog(rootPane, "Pierdes");
+                             System.out.println("Pierdes");
                          }
                       }
                      hilo.sleep(20);
@@ -295,12 +295,7 @@ public class dibujar extends JPanel implements ActionListener {
         while(suma < 1050){
             gra.drawImage(materiales.mostraragua(),suma,475,75,100,this);
             suma=suma+75;
-            
         }  
-        while(suma2 < 1050){
-            gra.drawImage(materiales.mostraragua(),suma2,90,25,25,this);
-            suma2= suma2+25;
-        } 
         Graphics2D gra2 = (Graphics2D) grafica;    
         gra2.drawImage(persona1.getImagen(),persona1.getX(),persona1.getY(),null); 
         
@@ -308,36 +303,29 @@ public class dibujar extends JPanel implements ActionListener {
         agu.drawImage(materiales.mostrararbusto(),0,445,180,35,this);
         agu.drawImage(materiales.mostrararbusto(),150,445,180,35,this);
         agu.drawImage(materiales.mostrararbusto(),730,445,180,35,this);
-        agu.drawImage(materiales.mostrararbusto(),875,445,180,35,this);   
-        agu.drawImage(materiales.mostrararbusto(),803,68,155,25,this);   
-        agu.drawImage(materiales.mostrararbusto(),930,68,155,25,this);  
+        agu.drawImage(materiales.mostrararbusto(),875,445,180,35,this); 
         
-        if(persona1.getX() >= 1010){
+        if(persona1.getX() >= 995){
             juegoo = new juego1_2();
             dispose();
-            
         }
-        System.out.println("x: "+persona1.getX());
-        System.out.println("y: "+persona1.getY());
-        
     }
    
-    
-    public void actionPerformed(ActionEvent e) {
-          repaint();
+
+        public void actionPerformed(ActionEvent e) {
+              repaint();
+        }
+
+        public final class teclado extends KeyAdapter{
+
+            public void keyPressed(KeyEvent e) {
+                persona1.keyPressed(e, persona1.getY(),persona1.getX());
+            }
+
+            public void keyReleased(KeyEvent e) {
+                persona1.keyReleased(e);
+            }
+
+         }
     }
-    
-    public final class teclado extends KeyAdapter{
-
-        public void keyPressed(KeyEvent e) {
-            persona1.keyPressed(e, persona1.getY(),persona1.getX());
-        }
-
-        public void keyReleased(KeyEvent e) {
-            persona1.keyReleased(e);
-        }
- 
-     }
-    
-}
 }
