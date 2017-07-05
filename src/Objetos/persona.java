@@ -18,7 +18,7 @@ import java.awt.Graphics2D;
  */
 public class persona {
     
-    private String defecto = "/imagenes/persona1.png";
+    private String defecto = "/imagenes/pprincipal/persona_abajo_0.gif";
     
   
     private int dx = 0;
@@ -29,6 +29,7 @@ public class persona {
     
    
     private int a;
+    private int b;
     public persona(String url){
         a = 0;
         x = 10;
@@ -86,30 +87,48 @@ public class persona {
         {
             if(value > 90)
             {               
-                dy= -10;
+                dy= -5;
                 a++;
-                if (a % 2 == 0) 
+                if (a % 4 == 1) 
                 {
-                    setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
+                    setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
                     //repaint();
                 } 
-                else 
+                else if(a % 4 == 2)
                 {
-                    setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
+                    setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/persona_arriba_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             else 
             {                
                 dy= 0;
                 a++;
-                if (a % 2 == 0) 
+                if (a % 4 == 1) 
                 {
-                    setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
                     //repaint();
                 } 
-                else 
+                else if(a % 4 == 2)
                 {
-                    setImage("/imagenes/persona_arriba_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_arriba_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
         }
@@ -117,51 +136,95 @@ public class persona {
         {
             if(value <= 435)
             {
-                dy= 10;
+               dy= 5;
                 a++;
-                if (a % 2 == 0) 
+                if (a % 4 == 1) 
                 {
-                    setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                    //repaint();
                 } 
-                else 
+                else if(a % 4 == 2)
                 {
-                    setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             else
             {
                 dy= 0;
                 a++;
-                if (a % 2 == 0) 
+                if (a % 4 == 1) 
                 {
-                    setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                    //repaint();
                 } 
-                else 
+                else if(a % 4 == 2)
                 {
-                    setImage("/imagenes/persona_abajo_" + (a % 2) + ".png");
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_abajo_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             
         }
         if(key == KeyEvent.VK_LEFT){
             if(value2 > 10){
-                dx= -10;
+                dx= -5;
                 a++;
-                if (a % 2 == 0) {
-                    setImage("/imagenes/persona_izquierda_" + (a % 2) + ".png");
+                if (a % 4 == 1) 
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                    //repaint();
+                } 
+                else if(a % 4 == 2)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
                 }
-                else {
-                    setImage("/imagenes/persona_izquierda_" + (a % 2) + ".png");
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             else{
                 dx= 0;
                 a++;
-                if (a % 2 == 0) {
-                    setImage("/imagenes/persona_izquierda_" + (a % 2) + ".png");
+                if (a % 4 == 1) 
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                    //repaint();
+                } 
+                else if(a % 4 == 2)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
                 }
-                else {
-                    setImage("/imagenes/persona_izquierda_" + (a % 2) + ".png");
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_izquierda_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             
@@ -169,27 +232,52 @@ public class persona {
         if(key == KeyEvent.VK_RIGHT){
             
             if(value2 < 995){
-                dx= 10;
+                dx= 5;
                 a++;
-                if (a % 2 == 0) {
-                    setImage("/imagenes/persona_derecha_" + (a % 2) + ".png");
+                if (a % 4 == 1) 
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                    //repaint();
                 } 
-                else {
-                    setImage("/imagenes/persona_derecha_" + (a % 2) + ".png");
+                else if(a % 4 == 2)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
             
             else{
                 dx= 0;
                 a++;
-                if (a % 2 == 0) {
-                    setImage("/imagenes/persona_derecha_" + (a % 2) + ".png");
+                if (a % 4 == 1) 
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                    //repaint();
                 } 
-                else {
-                    setImage("/imagenes/persona_derecha_" + (a % 2) + ".png");
+                else if(a % 4 == 2)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 3)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                }
+                else if(a % 4 == 0)
+                {
+                    setImage("/imagenes/pprincipal/persona_derecha_" + (a % 4) + ".gif");
+                    a=0;
                 }
             }
         }
+        
          if(key == KeyEvent.VK_ESCAPE){
              System.exit(0);
          }

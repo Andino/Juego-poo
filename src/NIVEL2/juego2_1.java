@@ -172,7 +172,7 @@ public class juego2_1 extends JFrame{
             }
             
         }
-        if(key == KeyEvent.VK_RIGHT){
+        if(key == KeyEvent.VK_RIGHT && key != KeyEvent.VK_DOWN){
             
             if(value2 < 995){
                 dx= 10;
