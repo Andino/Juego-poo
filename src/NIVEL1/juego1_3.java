@@ -1,7 +1,7 @@
 
 package NIVEL1;
 
-import NIVEL2.juego2_2;
+import NIVEL2.juego2;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 public class juego1_3 extends JFrame{
-    juego2_2 juegoo;
+    juego2 juegoo;
     private static final String Nombre = "Corre que te alcanzan";
     persona persona2 = new persona();
    
@@ -358,7 +358,7 @@ public class juego1_3 extends JFrame{
             if(value2 > 870 && value2 < 950 && value < 101){
                 dy=-10; 
                 if(getY() <= 61){
-                    juegoo = new juego2_2();
+                    juegoo = new juego2();
                     dispose();
                 }
             }

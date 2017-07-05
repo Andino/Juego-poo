@@ -1,6 +1,6 @@
 
 package NIVEL2;
-import NIVEL1.juego1_1;
+import NIVEL2.juego2_1;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -30,7 +30,7 @@ public class juego2 extends JFrame{
     }
     public class persona {
     private String persona = "/imagenes/persona1.png";
-    private String jardin = "/imagenes/nivel3.jpg";
+    private String jardin = "/imagenes/juego2.jpg";
    
   
     private int dx = 0;
@@ -248,7 +248,7 @@ public class dibujar extends JPanel implements ActionListener {
     
     public void paint(Graphics grafica)
     {
-        juego1_1  juegoo;
+        juego2_1  juegoo;
         int suma =0;
         int suma2 = 575;
         super.paint(grafica);
@@ -268,12 +268,12 @@ public class dibujar extends JPanel implements ActionListener {
         Graphics2D agu = (Graphics2D) grafica;
         agu.drawImage(persona1.mostrararbusto(),730,445,180,35,this);
         agu.drawImage(persona1.mostrararbusto(),875,445,180,35,this);   
-        if(persona1.getX() >= 995)
-        {
-            juegoo = new juego1_1();
-            dispose();
-            
-        }
+        if(persona1.getX() > 920 && persona1.getX() < 990 && persona1.getY() < 250){
+                if(getY() <= 61){
+                    juegoo = new juego2_1();
+                    dispose();
+                }
+            }
            
         
         
