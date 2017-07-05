@@ -90,6 +90,7 @@ public class juego1_1 extends JFrame{
                 while (true) {        
                      for(int i = 0; i < 35; i ++){
                          enemigo1.movAuto("abajo", enemigo1.getY(), enemigo1.getX()); 
+                         enemigo1.movAuto("izquierda", enemigo1.getY(), enemigo1.getX()); 
                          hilo.sleep(15);
                          if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
                          {
@@ -99,6 +100,7 @@ public class juego1_1 extends JFrame{
                      
                      for(int j = 0; j < 35; j ++){
                          enemigo1.movAuto("arriba", enemigo1.getY(), enemigo1.getX()); 
+                         enemigo1.movAuto("derecha", enemigo1.getY(), enemigo1.getX()); 
                          hilo.sleep(15);
                          if(enemigo1.getX() == persona1.getX() && enemigo1.getY() == persona1.getY())
                          {
