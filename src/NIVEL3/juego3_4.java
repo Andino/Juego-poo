@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import JUEGO.menu;
+import java.applet.AudioClip;
 public class juego3_4 extends JFrame{
     
     private static final String Nombre = "Corre que te alcanzan";
@@ -273,8 +274,9 @@ public class juego3_4 extends JFrame{
             
             //aqui es para ver si el jugador atraviesa la puerta final
             if(value2 > 950 && value < 80){
-                new menu().setVisible(true);
-                dispose();
+                AudioClip Sonido;
+                Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/Congratulations.wav"));
+                Sonido.loop();
             }
             
         }
