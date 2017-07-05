@@ -21,7 +21,7 @@ public class Principal_Salir extends Thread
     public void run()
     {
         AudioClip Sonido;
-        Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/wtb.wav"));
+        Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/Nocturne6.wav"));
         Sonido.play();
     }    
 }

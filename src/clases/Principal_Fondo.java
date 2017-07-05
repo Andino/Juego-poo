@@ -16,7 +16,7 @@ public class Principal_Fondo extends Thread
     public void run()
     {
         AudioClip Sonido;
-        Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/Main.wav"));
+        Sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonidos/Main_1.wav"));
         Sonido.loop();
     }
 }

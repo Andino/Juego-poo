@@ -24,6 +24,14 @@ public class frm_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_records = new org.edisoncor.gui.panel.PanelTranslucido();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_records = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        btn_cerrar = new org.edisoncor.gui.button.ButtonAction();
         btn_salir = new javax.swing.JButton();
         btn_registros = new javax.swing.JButton();
         btn_aceptar = new javax.swing.JButton();
@@ -57,6 +65,97 @@ public class frm_principal extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(null);
+
+        jLabel11.setFont(new java.awt.Font("Malgun Gothic", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Records");
+
+        jt_records.setFont(new java.awt.Font("Malgun Gothic", 0, 18)); // NOI18N
+        jt_records.setForeground(new java.awt.Color(255, 255, 255));
+        jt_records.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lugar", "Nombre", "Puntaje", "Tiempo"
+            }
+        ));
+        jScrollPane2.setViewportView(jt_records);
+        if (jt_records.getColumnModel().getColumnCount() > 0) {
+            jt_records.getColumnModel().getColumn(0).setMinWidth(50);
+            jt_records.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jt_records.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal/NPC2.png"))); // NOI18N
+
+        jTextArea2.setBackground(new java.awt.Color(153, 153, 153));
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Bienvenido a la\npantalla de records,\ndonde puedes ver\nlos top 10 puntajes\nde Pixel Road.\n\nSi quieres ver tu\nnombre acá, trata \nde ser el mejor y \nesfuerzate a tope!\n\n:D");
+        jTextArea2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jTextArea2.setEnabled(false);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        btn_cerrar.setText("Cerrar");
+        btn_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cerrarMouseEntered(evt);
+            }
+        });
+        btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_recordsLayout = new javax.swing.GroupLayout(jp_records);
+        jp_records.setLayout(jp_recordsLayout);
+        jp_recordsLayout.setHorizontalGroup(
+            jp_recordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_recordsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jp_recordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_recordsLayout.createSequentialGroup()
+                        .addGroup(jp_recordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jp_recordsLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel12)))
+                        .addGap(14, 14, 14)))
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_recordsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(244, 244, 244))
+        );
+        jp_recordsLayout.setVerticalGroup(
+            jp_recordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_recordsLayout.createSequentialGroup()
+                .addGroup(jp_recordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_recordsLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_recordsLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jp_records);
+        jp_records.setBounds(610, 50, 650, 590);
 
         btn_salir.setBackground(new java.awt.Color(255, 255, 255));
         btn_salir.setFont(new java.awt.Font("Malgun Gothic", 0, 18)); // NOI18N
@@ -268,7 +367,7 @@ public class frm_principal extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Instrucciones Generales");
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal/NPC1.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal/NPC1.gif"))); // NOI18N
 
         jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
@@ -346,12 +445,10 @@ public class frm_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Thread Musica = new clases.Principal_Fondo("Musica");
-        Musica.start();
-        Musica.setPriority(10);
         
         btn_aceptar.setEnabled(false);
         jp_instrucciones.setVisible(false);
+        jp_records.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -365,9 +462,16 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_instruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_instruccionesActionPerformed
-        Thread Boton = new clases.Principal_Instrucciones("Boton");
-        Boton.start();
-        jp_instrucciones.setVisible(true);
+        if(jp_records.isShowing())
+        {
+            
+        }
+        else
+        {
+            Thread Boton = new clases.Principal_Instrucciones("Boton");
+            Boton.start();
+            jp_instrucciones.setVisible(true);
+        }
     }//GEN-LAST:event_btn_instruccionesActionPerformed
 
     private void btn_salirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMouseEntered
@@ -391,7 +495,16 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_aceptarMouseEntered
 
     private void btn_registrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrosActionPerformed
-        // TODO add your handling code here:
+        if(jp_instrucciones.isShowing())
+        {
+            
+        }
+        else
+        {
+            Thread Boton = new clases.Principal_Records("Boton");
+            Boton.start();
+            jp_records.setVisible(true);
+        }
     }//GEN-LAST:event_btn_registrosActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
@@ -433,6 +546,15 @@ public class frm_principal extends javax.swing.JFrame {
        Boton.start();
     }//GEN-LAST:event_btn_guardarMouseEntered
 
+    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
+        jp_records.setVisible(false);
+    }//GEN-LAST:event_btn_cerrarActionPerformed
+
+    private void btn_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseEntered
+        Thread Boton = new clases.Principal_MouseOverButton("Boton");
+        Boton.start();
+    }//GEN-LAST:event_btn_cerrarMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -464,6 +586,7 @@ public class frm_principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aceptar;
+    private org.edisoncor.gui.button.ButtonAction btn_cerrar;
     private org.edisoncor.gui.button.ButtonTextDown btn_cerrarInstrucciones;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_instrucciones;
@@ -471,6 +594,8 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -480,9 +605,14 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private org.edisoncor.gui.panel.PanelRectTranslucido jp_formulario;
     private org.edisoncor.gui.panel.PanelTranslucido jp_instrucciones;
+    private org.edisoncor.gui.panel.PanelTranslucido jp_records;
+    private javax.swing.JTable jt_records;
     private javax.swing.JLabel lbl_fondo;
     private org.edisoncor.gui.textField.TextFieldRoundIcon txt_nombre;
     // End of variables declaration//GEN-END:variables

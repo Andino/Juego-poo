@@ -44,15 +44,19 @@ public class juego1_1 extends JFrame{
     
     }
     
+    
+    //Movimiento diagonal
     Thread hilo = new Thread() {
         
         @Override
         public void run() {
             try {
-                hilo.sleep(1000);
+                hilo.sleep(1000);//Tiempo para qe comienze
                 while (true) {        
                      for(int i = 0; i < 35; i ++){
+                     //Se hace tan rapido que se ve como que va en diagonal 
                          enemigo.movAuto("abajo", enemigo.getY(), enemigo.getX()); 
+                         enemigo.movAuto("derecha", enemigo.getY(), enemigo.getX()); 
                          hilo.sleep(25);
                          if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
                          {
@@ -62,13 +66,14 @@ public class juego1_1 extends JFrame{
                      
                      for(int j = 0; j < 35; j ++){
                          enemigo.movAuto("arriba", enemigo.getY(), enemigo.getX()); 
+                         enemigo.movAuto("izquierda", enemigo.getY(), enemigo.getX()); 
                          hilo.sleep(25);
                          if(enemigo.getX() == persona1.getX() && enemigo.getY() == persona1.getY())
                          {
                              JOptionPane.showMessageDialog(rootPane, "Pierdes");
                          }
                       }
-                     hilo.sleep(20);
+                     hilo.sleep(20);//Velocidad de la iteracion
                 }
             } catch (java.lang.InterruptedException ie) {
                 System.out.println(ie.getMessage());
