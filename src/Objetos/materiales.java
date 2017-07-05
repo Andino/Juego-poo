@@ -17,11 +17,13 @@ public class materiales {
     private String jardin = "/imagenes/jardin1.png";
     private String aguaa = "/imagenes/agua.gif";
     private String arbusto = "/imagenes/arbusto2.png";
+    private String utileria = "/imagenes/utileria.png";
     
     private Image imagen2;
     private Image imagen3;
     private Image imagen4;
     private Image imgEnemigo;
+    private Image imagen5;
     
     public materiales()
     {
@@ -31,6 +33,8 @@ public class materiales {
         imagen3 = agua.getImage();
         ImageIcon arbustoo = new ImageIcon(this.getClass().getResource(arbusto));
         imagen4 = arbustoo.getImage();
+        ImageIcon uti = new ImageIcon(this.getClass().getResource(utileria));
+        imagen5 = uti.getImage();
     }
     
     public Image mostrarimagen(){ return imagen2; }
@@ -40,4 +44,6 @@ public class materiales {
     public Image mostrararbusto(){ return imagen4; }
     
     public Image mostrarenemigo(){ return imgEnemigo; }
+    
+    public Image mostrarutileria(){return imagen5;}
 }

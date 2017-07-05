@@ -52,10 +52,16 @@ public class juego3_4 extends JFrame{
     private String abierta = "/imagenes/puerta.png";
     private String fin = "/imagenes/salida_1.png";
     private String llave = "/imagenes/llave.png";
+    private String BossDefault = "/imagenes/Characters/boss/img/boss_abajo_1.gif";
     private int dx = 0;
     private int dy = 0;
     private int x;
     private int y;
+    
+    private Objetos.persona persona1;
+    int pos1;
+    int pos2;
+    
     private Image imagen;
     private Image imagen2;
     private Image imagen3;
@@ -73,6 +79,7 @@ public class juego3_4 extends JFrame{
     private Image imagen15;
     private Image imagen16;
     private Image imagen17;
+    private Image imagen18;
     private int a;
     public persona(){
         a = 0;
@@ -112,10 +119,16 @@ public class juego3_4 extends JFrame{
         imagen16 = finn.getImage();
         ImageIcon llavee = new ImageIcon(this.getClass().getResource(llave));
         imagen17 = llavee.getImage();
+        ImageIcon boss_standing = new ImageIcon(this.getClass().getResource(BossDefault));
+        imagen18 = llavee.getImage();
     }
     
     public Image mostrarimagen(){
         return imagen2;
+    }
+    public Image mostrarBoss()
+    {
+        return imagen18;
     }
     public Image mostrarllave(){
         return imagen17;
